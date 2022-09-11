@@ -1,0 +1,728 @@
+PART 1 - PYTHON THEORY QUESTIONS
+
+1. What is Python and what are its main features?
+Python is an object-oriented, high level programming language, meaning it uses a built-in compiler and has a
+higher level of abstraction from the machine itself making it easier for humans to understand. Its main features
+include being object-oriented, which means that code can be made in modules and reused easily making it practical;
+It is relatively easy to learn and open sourced, making it suitable for many project types free for use and
+collaboration; It can also be used for both front and back end development and has many frameworks.
+
+
+2. Discuss the difference between Python 2 and Python 3?
+Python 2 (2000) was introduced with the aim to encourage code literacy and make simple and easy to learn for anyone.
+It introduced PEP(Python Enhancement Proposal), the last version was 2.7 before it was discontinued in 2020. Python 3
+(2008) unlike Python 2 is not backward compatible, but it supports a lot of major functionalities that Python 2 offered.
+It was introduced trying to remove redundancy and repetitive code. It is forward compatible to make new versions better
+supported. Where Python 2 was mostly used for DevOps Engineering, Python 3 has a much wider scope, including software
+engineering, data science etc. Some notable changes in Python 3 include:
+
+- Print Keyword statement changed to print() function
+- String storage changed from ASCII in Python 2 to UNICODE in Python 3
+- Division of int - Python 2 gave integral value  (5 / 2 = 2). Python 3 can use floating point = (2.5)
+- In Python 2 values of global variables change inside for loops, in Python 3 they never change
+- Ease of syntax
+
+
+3. What is PEP 8?
+PEP 8 is a style guide for Python - a coding conventions and standard library. It intends to improve readability of
+code, and improve consistency. For example, it includes rules and guides on: indentation, 4 space rule, closing
+brackets/ braces/ parentheses, on following line under the first non whitespace character or beginning of line,
+max line length 79, blank lines and imports on separate lines.
+
+
+4. In computing / computer science what is a program?
+It is a specific set of ordered operations for a computer to execute in order to perform a function or task or solve
+a problem.
+
+
+5. In computing / computer science what is a process?
+A set of instructions currently being executed or processed.
+
+
+6. In computing / computer science what is a cache?
+A location or piece of software that temporarily stores data to reduce the time it takes to access that data
+when requested.
+
+
+7. In computing / computer science what is a thread and what do we mean by multithreading?
+A thread is the smallest sequence of instructions to a computer. One or more threads can be run simultaneously to make
+a process or program. A thread of execution is a self-contained sequence, the smallest unit of programmed instructions.
+Multithreading allows the CPU (supported by the operating system) to execute multiple threads at the same time.
+
+
+8. In computing / computer science what is concurrency and parallelism and what are the differences?
+Concurrency is multiple processes or actions in process at the same time within overlapping timeframes, but NOT
+simultaneously. They do not happen in the same instant but a new task can begin before another ends.
+Parallelism is a computation where many processes are actually carried out simultaneously.
+
+
+9. What is GIL in Python and how does it work?
+GIL is the Global Interpreter Lock. It’s a ‘mutual exclusion’ that protects access to Python objects to stop multiple
+threads executing at once. If multiple threads are running, we don’t know in what order they access shared data, they
+can ‘race’ to access it. Thread-safe code is manipulated code that stops threads interfering with each other. Pythons
+memory is not thread safe, so GIL was invented to cover this so that race conditions will never happen.
+
+
+10. What do these software development principles mean: DRY, KISS, BDUF
+DRY - Don’t repeat yourself - don’t repeat blocks of code or logic that can be made into (for example) functions that
+can be simply called multiple times instead of constantly written out.
+
+KISS - Keep it simple stupid - Don’t overcomplicate things unnecessarily, design and systems should be as simple as
+possible for best user experience.
+
+BDUF - Big design Upfront - States that a projects design should be completed before any implementation
+
+
+11. What is a Garage Collector in Python and how does it work?
+It is Pythons inbuilt automatic memory management to clean unused and unwanted data from memory. A basic version of
+this is reference counting. For example variables automatically get a count every time they are referenced, once there
+are no more references, the variable is cleared, clearing the memory. Then there is generational garbage collection.
+This garbage collector keeps a track of all the objects in memory which start out in the first ‘generation’. If a
+garbage collection is executed and an object remains, it moves up a generation. There are three in total. There is a
+threshold number of objects in a generation so once that is exceeded a new collection process is triggered. This method
+allows developers to change behaviour of the garbage collector, by changing trigger thresholds, and manually initiating
+or disabling collections.
+
+
+12. How is memory managed in python?
+Python has an inbuilt memory manager which has a private heap it uses to store a programs objects and data structures
+without the developer having to do anything. It manages memory by allocating things to one of two parts of its memory:
+stack or heap. Things are allocated to stack memory if they happen in the function call stack - when functions are
+called - their variables get stored here temporarily. Once a function is returned the information is deleted and memory
+reallocated. The compiler manages this part and it is predefined, it allows a programs to recall data very fast. Heap
+memory is memory space that gets allocated by programmers instructions. Objects are stored here along with Global or
+shared variables. The garbage collector works on the heap memory.
+
+
+13. What is a python module?
+A module is a python code files or scripts that contains functions definitions or statements that can be imported into
+a project. They can be built in modules such as datetime or user-defined.
+
+
+14. What is docstring in Python?
+A docstring is a string that comes as the first statement after the definition of a function, class, method or module.
+It is used to document how that specific segment of code works. They are surrounded by three “”
+
+
+15. What is pickling and unpicking in Python?
+Pickling is the process where Python objects are serialised, converted into byte streams or character streams to be
+stored or sent to other python programs. Unpickling is the inverse, where the byte stream is converted into an object
+
+
+16. What are the tools that help to find bugs or perform static analysis?
+There are a few tools that can be installed using pip, to fix bugs or perform static analysis (check code without
+executing it), popular ones include pylint, pyflakes, mypy and pychecker.
+
+
+17. How are arguments passed in Python by value or by reference? Give an example
+Arguments are not passed by either way in Python, but by assignment or object reference (similar to 'by reference')
+So an OBJECT is referenced, which can be assigned a value inside a function. EG:
+
+string = "I am THE string"
+def example(string):
+    string = "I am assigned to string"
+    print("Inside:", string)
+
+example(string)
+print("Outside:", string)
+
+
+18. What are Dictionary and List comprehensions in Python? Provide examples
+They are a way of shortening syntax for creating Dictionaries or lists from other lists or strings:
+
+List comprehension example:
+new_list = [number for number in range(20) if number % 2 == 0]
+
+Dictionary comprehension example:
+times_hundred_dict = {num: num*100 for num in range(1, 11)}
+
+
+19. What is namespace in Python?
+Namespace contains all the variables or names created in a program that objects are assigned to. The built-in namespace
+contains the names of pythons built-in objects such as int, Len, exception; the global namespace contains names
+defined in the global scope or the main program, including modules. Enclosing or local namespace is namespace local
+to a created variable, they exist only until the function is terminated.
+
+
+20. What is pass in Python?
+It is a null statement or a placeholder for future code. When executed it is not ignored but no operation happens.
+It can hold the place where empty code is not allowed in function and class definitions, loops and if statements.
+
+
+21. What is a unit text in. Python?
+A code level test which verifies a very small section (unit) of code functionality.
+
+
+22. In Python what is slicing?
+Slicing is a method used on strings, lists, sets, tuples or other objects to split or slice them up to return
+specified sections.
+
+
+23.  What is negative index in Python?
+It allows access to indexes by using negative numbers. The negative index starts from the end, The last element in an
+array for example, is the first in the negative index (-1) it lets us start slicing from the end.
+
+
+24. How can the ternary operators be used in python? Give an example?
+To write conditional statements concisely:
+age = int(input('How old are you?'))
+print("Can Drink" if age >= 18 else "Cannot Drink")
+
+
+25. What does this mean: *args, **kwargs?  And why would we use it?
+Args and kwargs are variables which allow multiple arguments or keyword arguments to be passed into a function.
+
+Args uses the unpacking operator '*'. You can rename the “args” as long as you use the *. It can be used to pass a
+varying (potentially not yet defined) number of arguments into a function. They can be used and iterated over as a tuple.
+
+Kwargs uses '**' the same way but to pass keyword arguments (eg: a=‘red’, b=‘blue’)and it iterates using a dictionary
+and can only be used on dictionaries.
+
+
+26. How are range and xrange different from one another?
+range() takes a single argument of up to three values, start stop and jump and returns a list.
+xrange() takes the same arguments but returns an iterable object. This object can then return a list of integers to use
+in a loop. It consumes less memory than range. xrange() is now discontinued but range() has taken on its functionality
+
+
+27. What is Flask and what can we use it for?
+Is a web app framework (code library) for Python that can be used to build web applications.
+
+
+28. What are clustered and non-clustered index in a relational database?
+A clustered index is the physical order in which records are stored, so the way in which they are entered into a
+database. A clustered index is on the primary key column by default. A non clustered index is a logical order
+that is created which references the records and can be queried.
+
+
+29. What is a ‘deadlock’ in a relational database?
+It is a situation where two or more operations are waiting for locks to be lifted by each other to access the data to
+be able to progress or finish.
+
+
+30. What is a ‘livelock’ in a relational database?
+Similar to a deadlock but operations are not waiting for locks to lift, they are blocked by actions of other operations.
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+PART 2 - PYTHON STRING METHODS
+
+= Describe each method and provide an example =
+To do this I have created some strings to manipulate as examples, and used a print statement to demonstrate:
+
+    my_string = 'hey if tacos can totally fall apart and still be amazing so can you'
+    string_two = 'I Love Tacos'
+    extra_string = 'BECAUSETHEYAREAWESOME123'
+    number_string = '123.4'
+    a_list = ['I\'m', 'still', 'talking', 'about', 'TACOS']
+    spaces_string = '   Hello, Tacos?               '
+    last_string = "I'm sorry if I've made you hungry"
+
+
+capitalize() - makes the first character uppercase:
+print(my_string.capitalize())
+# Hey if tacos can totally fall apart and still be amazing so can you
+
+
+casefold() - changes or 'folds' all characters to lowercase:
+print(extra_string.casefold())
+# becausetheyareawesome123
+
+
+center() - centers a string with space or specific characters. Takes a total string length and optionally a character:
+print(string_two.center(20, '*'))
+# ****I Love Tacos****
+
+count() - returns the number of times a specific value appears - it can optionally take a start and end value:
+print(my_string.count('t'))
+# 5
+
+endswith() - returns true if string ends with the specified value - it is case-sensitive:
+print(my_string.endswith('U'))
+# False
+
+find() - searches the string and returns the first appearance of suggested character. Returns -1 if not found:
+print(my_string.find('y'))
+print(string_two.find('y'))
+# 2
+# -1
+
+format() - formats into a string, can include other things (eg: int) stored into variables:
+print("This is my second string: ' {} '".format(string_two))
+# This is my second string: ' I Love Tacos '
+
+
+index() - searches and returns the index of the first time it finds the value specified:
+print(my_string.index('t'))
+# 7
+
+
+isalnum() - returns true if characters are all alphanumeric (letters and numbers, no special characters):
+print(extra_string.isalnum())
+# True
+
+
+isalpha() - returns true if all characters are alphabetical (no special characters or spaces):
+print(string_two.isalpha())
+# False
+
+
+isdigit() - returns true if all characters are only digits:
+print(extra_string.isdigit())
+# False
+
+
+islower() - returns true if all characters are lowercase:
+print(my_string.islower())
+# True
+
+
+isnumeric() - returns true if all characters are numeric, no special characters, so floats also return false:
+print(number_string.isnumeric())
+# False
+
+
+isspace() - returns true if ALL characters are spaces:
+print(my_string.isspace())
+# False
+
+
+istitle() - returns true if the rules of a title are met, so all words have the first letter uppercase:
+print(string_two.istitle())
+# True
+
+
+isupper() - returns true if all characters are uppercase (numbers are ignored, so can be present):
+print(extra_string.isupper())
+# True
+
+
+join() - takes items from an iterable - list, dictionary, tuple - and forms a string:
+a_list = ['I\'m', 'still', 'talking', 'about', 'TACOS']
+print(' '.join(a_list))
+# I'm still talking about TACOS
+
+
+lower() - converts all characters to lowercase:
+print(extra_string.lower())
+# becausetheyareawesome123
+
+
+lstrip() - removes leading (left) spaces:
+print(spaces_string.lstrip())
+# 'Hello, Tacos?               '
+
+
+replace() - replaces a word or phrase with a defined character. It takes two arguments, a character to be replaced and
+a character to replace it with:
+print(spaces_string.replace(' ', '*'))
+# ***Hello,*Tacos?***************
+
+
+rsplit() - splits a string to a list starting from the right (end) and takes a defined separator for the break:
+print(extra_string.rsplit('1'))
+ # ['BECAUSETHEYAREAWESOME', '23']
+
+
+rstrip() - removes trailing (right) spaces:
+print(spaces_string.rstrip())
+#   Hello, Tacos?               '
+
+
+split() - splits the string to a list of each word:
+print(my_string.split())
+# ['hey', 'if', 'tacos', 'can', 'totally', 'fall', 'apart', 'and', 'still', 'be', 'amazing', 'so', 'can', 'you']
+
+
+splitlines() - splits the string to a list at the line breaks - so each line is an item:
+print(my_string.splitlines())
+# ['hey if tacos can totally fall apart and still be amazing so can you']
+
+
+startswith() - returns true if string starts with the specified value (again is case-sensitive):
+print(string_two.startswith('i'))
+# False
+
+
+strip() - returns a version trimmed of all white space:
+print(spaces_string.strip())
+# Hello, Tacos?
+
+
+swapcase() - converts lowercase characters to uppercase and vice-versa:
+print(string_two.swapcase())
+# i lOVE tACOS
+
+
+title() - converts string into title style, the first character of each word to uppercase:
+print(my_string.title())
+# Hey If Tacos Can Totally Fall Apart And Still Be Amazing So Can You
+
+
+upper() - converts all characters to uppercase:
+print(last_string.upper())
+# I'M SORRY IF I'VE MADE YOU HUNGRY
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+PART 3 - PYTHON LIST METHODS
+
+= Describe each method and provide an example =
+To do this I have created some lists to manipulate as examples, and used a print statement to demonstrate:
+
+    my_list = ['tortilla', 'onion', 'pepper', 'oil', 'garlic', 'paprika', 'cumin', 'beef']
+    second_list = ['avocado', 'salt', 'lime']
+
+
+append() - adds an element to the end of the list:
+my_list.append('stock')
+print(my_list)
+# ['tortilla', 'onion', 'pepper', 'oil', 'garlic', 'paprika', 'cumin', 'beef', 'stock']
+
+
+clear() - removes all elements leaving an empty list:
+my_list.clear()
+print(my_list)
+# []
+
+
+copy() - returns a copy of the list - does not change the original:
+my_list.copy()
+print(my_list)
+# ['tortilla', 'onion', 'pepper', 'oil', 'garlic', 'paprika', 'cumin', 'beef']
+
+
+count() - returns the number of times a specified value or element appears:
+x = my_list.count("tortilla")
+print(x)
+# 1
+
+
+extend() - adds elements from one list to the current list or named list:
+my_list.extend(second_list)
+print(my_list)
+# ['tortilla', 'onion', 'pepper', 'oil', 'garlic', 'paprika', 'cumin', 'beef', 'avocado', 'salt', 'lime']
+
+
+index() - returns the index of the first appearance of the chosen value:
+print(my_list.index("cumin"))
+# 6
+
+
+insert() - adds a value at a position. Takes two arguments, first the position, second the value to be inserted:
+my_list.insert(7, "tortilla")
+print(my_list)
+# ['tortilla', 'onion', 'pepper', 'oil', 'garlic', 'paprika', 'cumin', 'tortilla', 'beef', 'avocado', 'salt', 'lime']
+
+
+pop() - removes the element at the specified index:
+my_list.pop(3)
+print(my_list)
+# ['tortilla', 'onion', 'pepper', 'garlic', 'paprika', 'cumin', 'tortilla', 'beef', 'avocado', 'salt', 'lime']
+
+
+remove() - removes the first occurrence of the chosen value:
+my_list.remove("tortilla")
+print(my_list)
+# ['onion', 'pepper', 'garlic', 'paprika', 'cumin', 'tortilla', 'beef', 'avocado', 'salt', 'lime']
+
+
+reverse() - reverses the order of the elements in the list:
+my_list.reverse()
+print(my_list)
+# ['lime', 'salt', 'avocado', 'beef', 'tortilla', 'cumin', 'paprika', 'garlic', 'pepper', 'onion']
+
+
+sort() - sorts either in ascending or descending (alphabetical or numerical) if specified:
+my_list.sort()
+print(my_list)
+# ['avocado', 'beef', 'cumin', 'garlic', 'lime', 'onion', 'paprika', 'pepper', 'salt', 'tortilla']
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+PART 4 - PYTHON TUPLE METHODS
+
+= Describe each method and provide an example =
+To do this I have created a tuple to manipulate as an example, and used a print statement to demonstrate:
+
+    my_tuple = ("tomatoes", "lime", "spring onion", "lime",  "coriander", "tomatoes", "lime")
+
+
+count() - returns the number of times a value occurs:
+print(my_tuple.count("lime"))
+# 3
+
+
+index() - searches for the specified value and returns its index:
+print(my_tuple.index("tomatoes"))
+# 0
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+PART 5 - PYTHON DICTIONARY METHODS
+
+= Describe each method and provide an example =
+To do this I have created a dictionary to manipulate as an example, and used a print statement to demonstrate:
+
+    my_dict = {
+    "tortilla": "tortilla",
+    "onion": "cebolla",
+    "pepper": "pimienta",
+    "garlic": "ajo",
+    "paprika": "pimenton",
+    "cumin": "comino",
+    "beef": "carne de res"
+}
+
+
+clear() - removes all the elements, leaving an empty dictionary:
+my_dict.clear()
+print(my_dict)
+# {}
+
+
+copy() - returns a copy of the whole dictionary:
+my_dict.copy()
+print(my_dict)
+# {'tortilla': 'tortilla', 'onion': 'cebolla', 'pepper': 'pimienta', 'garlic': 'ajo', 'paprika': 'pimenton',
+'cumin': 'comino', 'beef': 'carne de res'}
+
+
+fromkeys() - creates a dictionary with the specified keys and values:
+key = "avocado", "lime", "salt"
+value = "guacamole"
+new_dict = dict.fromkeys(key, value)
+print(new_dict)
+# {'avocado': 'guacamole', 'lime': 'guacamole', 'salt': 'guacamole'}
+
+
+get() - returns the value of the requested key:
+print(my_dict.get("pepper"))
+# pimienta
+
+
+items() - returns key value pairs as tuples in a list:
+print(my_dict.items())
+# dict_items([('tortilla', 'tortilla'), ('onion', 'cebolla'), ('pepper', 'pimienta'), ('garlic', 'ajo'),
+('paprika', 'pimenton'), ('cumin', 'comino'), ('beef', 'carne de res')])
+
+
+keys() - returns all the keys as a list:
+print(my_dict.keys())
+# dict_keys(['tortilla', 'onion', 'pepper', 'garlic', 'paprika', 'cumin', 'beef'])
+
+
+pop() - removes and returns the value for the specified key:
+print(my_dict.pop("tortilla"))
+# tortilla
+
+
+popitem() - removes and returns the last item, no need to specify:
+print(my_dict.popitem())
+# ('beef', 'carne de res')
+
+
+setdefault() - If there is no value at the specified key it inserts it, else it returns the value of the key:
+default = my_dict.setdefault("oil", "aceite")
+print(my_dict)
+# {'onion': 'cebolla', 'pepper': 'pimienta', 'garlic': 'ajo', 'paprika': 'pimenton', 'oil': 'aceite'}
+
+
+update() - adds a new item to the dictionary:
+my_dict.update({"tortilla": "tortilla"})
+print(my_dict)
+# {'onion': 'cebolla', 'pepper': 'pimienta', 'garlic': 'ajo', 'paprika': 'pimenton', 'oil': 'aceite',
+'tortilla': 'tortilla'}
+
+
+values() - returns a list of the dictionaries values:
+print(my_dict.values())
+# dict_values(['cebolla', 'pimienta', 'ajo', 'pimenton', 'aceite', 'tortilla'])
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+PART 6 - PYTHON SET METHODS
+
+= Describe each method and provide an example =
+To do this I have created sets to manipulate as examples, and used a print statement to demonstrate:
+
+    my_set = {"tortillas", "beef", "I Love Tacos!", "salsa", "guacamole", "Hello, Tacos?"}
+    another_set = {"I Love Tacos!", "Tortillas", "tomatoes", "onions", "Hola, Tacos?"}
+    last_set = {"*", "+"}
+
+
+add() - adds an element to a set:
+my_set.add("Hola, Tacos?")
+print(my_set)
+# {'beef', 'Hello, Tacos?', 'Hola, Tacos?', 'guacamole', 'tortillas', 'I Love Tacos!', 'salsa'}
+
+
+clear() - removes all the elements, leaving an empty set:
+my_set.clear()
+print(my_set)
+# set()
+
+
+copy() - returns a copy of the set:
+print(my_set.copy())
+# {'beef', 'I Love Tacos!', 'tortillas', 'Hello, Tacos?', 'Hola, Tacos?', 'guacamole', 'salsa'}
+
+
+difference() - returns a new set containing the items that are different between the two sets(eg, items only in one set):
+difference = my_set.difference(another_set)
+print(difference)
+# {'guacamole', 'salsa', 'tortillas', 'beef', 'Hello, Tacos?'}
+
+
+intersection() - returns a set that is the intersection of two or more sets (eg, items in both sets):
+intersect = my_set.intersection(another_set)
+print(intersect)
+# {'Hola, Tacos?', 'I Love Tacos!'}
+
+
+issubset() - returns if another set(the argument) contains this set or not:
+sub = another_set.issubset(my_set)
+print(sub)
+# False
+
+
+issuperset() - returns of this set contains another (the argument):
+super = my_set.issuperset(another_set)
+print(super)
+
+
+pop() - removes (and returns) a random element:
+print(my_set.pop())
+# guacamole
+# I Love Tacos!
+
+
+remove() - removes a specific element:
+my_set.remove("salsa")
+print(my_set)
+# {'Hello, Tacos?', 'Hola, Tacos?', 'beef', 'I Love Tacos!', 'tortillas'}
+print("clear")
+
+
+symmetric_difference() - returns a set with all items unique to the individual set not the ones in both:
+symmetry = my_set.symmetric_difference(another_set)
+print(symmetry)
+# {'Tortillas', 'onions', 'beef', 'guacamole', 'Hello, Tacos?', 'tomatoes'}
+
+
+union() - returns a set containing all item from both sets:
+both = my_set.union(another_set)
+print(both)
+# {'onions', 'guacamole', 'Tortillas', 'tomatoes', 'tortillas', 'Hola, Tacos?', 'I Love Tacos!', 'Hello, Tacos?'}
+
+
+update() - updates a set by adding items from another set, without duplicates, in a random place:
+my_set.update(last_set)
+print(my_set)
+# {'*', 'guacamole', 'Hola, Tacos?', 'tortillas', 'beef', 'I Love Tacos!', '+'}
+# {'*', '+', 'Hola, Tacos?', 'tortillas', 'Hello, Tacos?', 'guacamole', 'beef'}
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+PART 7 - PYTHON FILE METHODS
+
+= Describe each method and provide an example =
+To do this I created a file to manipulate as an example, and used a print statement to demonstrate:
+
+    my_file = open("file.txt", 'r')
+
+
+read() - returns the files content:
+print(my_file.read())
+# A taco (US: /ˈtɑːkoʊ/, UK: /ˈtækoʊ/, Spanish: [ˈtako]) is a traditional
+# Mexican food consisting of a small hand-sized corn- or wheat-based tortilla
+# topped with a filling. The tortilla is then folded around the filling and
+# eaten by hand. A taco can be made with a variety of fillings, including beef,
+# pork, chicken, seafood, beans, vegetables, and cheese, allowing for great
+# versatility and variety. They are often garnished with various condiments,
+# such as salsa, guacamole, or sour cream, and vegetables, such as lettuce,
+# onion, tomatoes, and chiles. Tacos are a common form of antojitos, or Mexican
+# street food, which have spread around the world.
+#
+# Tacos can be contrasted with similar foods such as burritos, which are often
+# much larger and rolled rather than folded; taquitos, which are rolled and fried;
+# or chalupas/tostadas, in which the tortilla is fried before filling.
+
+
+readline() - returns a single line from a file:
+print(my_file.readline())
+# A taco (US: /ˈtɑːkoʊ/, UK: /ˈtækoʊ/, Spanish: [ˈtako]) is a traditional
+
+
+readlines() - returns a list of lines, specified how many by bytes:
+print(my_file.readlines(100))
+# ['A taco (US: /ˈtɑːkoʊ/, UK: /ˈtækoʊ/, Spanish: [ˈtako]) is a traditional\n', 'Mexican food consisting of a small
+hand-sized corn- or wheat-based tortilla\n']
+
+
+write() - writes a specific string to a file:
+my_file = open("file.txt", "a")
+my_file.write("Hello, Taco")
+my_file.close()
+
+# A taco (US: /ˈtɑːkoʊ/, UK: /ˈtækoʊ/, Spanish: [ˈtako]) is a traditional
+# Mexican food consisting of a small hand-sized corn- or wheat-based tortilla
+# topped with a filling. The tortilla is then folded around the filling and
+# eaten by hand. A taco can be made with a variety of fillings, including beef,
+# pork, chicken, seafood, beans, vegetables, and cheese, allowing for great
+# versatility and variety. They are often garnished with various condiments,
+# such as salsa, guacamole, or sour cream, and vegetables, such as lettuce,
+# onion, tomatoes, and chiles. Tacos are a common form of antojitos, or Mexican
+# street food, which have spread around the world.
+#
+# Tacos can be contrasted with similar foods such as burritos, which are often
+# much larger and rolled rather than folded; taquitos, which are rolled and fried;
+# or chalupas/tostadas, in which the tortilla is fried before filling.
+#
+# Hello, Taco
+
+
+writelines() - writes a list of strings to the file:
+my_file = open("file.txt", "a")
+my_file.writelines(["\nI hope you like Tacos", "\nThis is the last time I will talk about tacos", "\nThank you!"])
+my_file.close()
+
+# A taco (US: /ˈtɑːkoʊ/, UK: /ˈtækoʊ/, Spanish: [ˈtako]) is a traditional
+# Mexican food consisting of a small hand-sized corn- or wheat-based tortilla
+# topped with a filling. The tortilla is then folded around the filling and
+# eaten by hand. A taco can be made with a variety of fillings, including beef,
+# pork, chicken, seafood, beans, vegetables, and cheese, allowing for great
+# versatility and variety. They are often garnished with various condiments,
+# such as salsa, guacamole, or sour cream, and vegetables, such as lettuce,
+# onion, tomatoes, and chiles. Tacos are a common form of antojitos, or Mexican
+# street food, which have spread around the world.
+#
+# Tacos can be contrasted with similar foods such as burritos, which are often
+# much larger and rolled rather than folded; taquitos, which are rolled and fried;
+# or chalupas/tostadas, in which the tortilla is fried before filling.
+#
+# Hello, Taco
+#
+# I hope you like Tacos
+# This is the last time I will talk about tacos
+# Thank you!
+
+
