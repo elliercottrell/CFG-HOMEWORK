@@ -1,0 +1,96 @@
+
+PART 1 PYTHON / SQL THEORY:
+
+1. What is Thread and Multithreading?
+A thread is the smallest sequence of instructions to a program. Multithreading is when two or more of these run at
+the same time.
+
+2. What is Concurrency and Parallelism and what are the differences?
+Concurrency is when multiple threads can run in the same time frame, or at the same time, parallelism is when
+threads run simultaneously, they are different in that concurrency allows for multiple threads but not
+simultaneously.
+
+3. What is Garbage collector? How does it work?
+It is how Python gets rid of out of use objects to keep the memory clear. It runs sweeps and collects references
+to variables and objects, if they are no longer used it clears them from memory. It has three ‘generations’ so if
+an object is saved it moves up a generation. Garbage collector is triggered by hitting the limit of objects it can
+store (this can be modified)
+
+4. What is Transaction Management in a relational database (give an example)?
+Transactions are sequences of operations performed on a database. Transaction management aims to ensure that
+these operations complete, or don’t fail. It is about managing errors and keeping the database free of issues.
+
+5. What is an endpoint and what are the most common methods to interact with the API data source?
+An endpoint is where you access the API in your code, it is the link between your code and the API. The most common
+methods to interact with the data source include: using API keys to fetch the data and manipulate to display it in
+some way.
+
+6. What is data normalization in SQL? Please provide an example (any) of a database restructuring using primary/foreign
+keys to maintain data integrity.
+Data normalization is when a database is organised or structured using the columns to logically organise rather
+than relying on the way the data has been entered.
+
+
+
+
+PART 2 Discuss Exception handling (4 pts) and debugging in Python (4 pts)
+Exception handling is the way in which we can handle errors or predetermine exceptions to inputs or the way the
+code runs, and place alternatives or clauses to deal with those issues. For example if we know that someone may
+make a mistake entering a string instead of an integer, we can preempt this and write in ValueErrors to deal with
+this before it happens.
+
+Debugging can be run in the IED to check our code for errors / bugs as we write it. It can run small sections of
+code - broken up where we determine - at a time, so we can see if smaller parts work alone. It can help to narrow
+down where a problem is in large bodies of code.
+
+
+
+
+PART 5 Agile methodology: name and describe any 2 of the main roles in a Scrum Agile team.
+Scrum master: This is the person who is the lead role in the team. They help to organise the team, bringing the
+development team together with the product managers etc to make sure there is coordination and the team is effective.
+They are accountable for the whole team and their output. This can involve coaching, general communication and
+development with all the members, and making sure everyone stays on track. They would organise and lead meetings
+and make sure that all goals are met.
+
+Product Owner: Someone from outside of the development team, maybe a stakeholder or a product user/ tester.
+They communicate goals of the product and make sure that what is being developed is in the best interest of the
+end result. They maintain standards and help to keep focus on the end product.
+
+
+
+PART 6 Discuss advantages and disadvantages of TDD (Test Driven Development):
+The main advantage to TDD is that code is tested along side its writing. This can hopefully  help to eliminate
+problems by recognising where issues may lie and accounting for them from the beginning of the development process.
+Developers write tests before they write the code, therefore when they write the actual code they write it with the
+guidelines of passing these tests, in theory the code is very robust and is not prone to errors when written this
+way. Any that developers may encounter should already have been predetermined and therefore handled. It also helps
+to keep code in simple function blocks, this means they can be tested easily, but a side effect is simple explicit
+code.
+
+The disadvantages to this could be that developers get bogged down with more time going into the test writing than
+into the writing of their program code. It’s possible that this could lead to less DRY and more convoluted code as
+everything is spread out to allow for easy testing of individual elements, and code could be repeated if it becomes
+less easy to see what can be reused. It may also add extra unnecessary parts to the program code if developers over-
+think the testing and add complexity that doesn’t need to be there.
+
+
+
+PART 7 What is a Python DB cursor? Provide an example
+It is what connects Python to SQL and helps us to receive data from the database
+
+
+
+PART 8
+Write a SQL query to find the maximum order (purchase) amount for each customer.
+The customer ID should be in the range 3002 and 3007 (begin and end values are included.).
+Filter the rows for maximum order (purchase) amount is higher than 1000.
+Return customer id and maximum purchase amount.
+
+
+SELECT customer_id, max(purch_amt) AS 'MAX AMT'
+FROM OrdersInfo.orders
+WHERE customer_id BETWEEN 3002 and 3008
+AND purch_amt > 1000;
+
+
