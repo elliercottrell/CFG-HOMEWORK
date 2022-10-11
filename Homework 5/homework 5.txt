@@ -1,0 +1,155 @@
+TASK 1 - AGILE TECHNIQUES
+
+
+QUESTION 1
+
+Complete definitions for Scrum related key terminology provided below.
+
+SCRUM CEREMONIES
+
+Product Backlog Refinement:
+Nearing the end of a sprint, a meeting of the team and product owner to review the backlog (what's left to do),
+collaborate on details and organise before the next sprint. The product owners’ feedback is used to focus on the teams'
+understanding of next steps.
+
+Sprint Planning:
+A meeting to plan the next sprint - ie what will be worked on and how or by whom. Attended by development teams scrum
+masters and product owners to plan what will be accomplished in the up-coming sprint. Shared and individual goals set
+before beginning the sprint. Itemised lists broken down into tasks and allocated to the right people.
+
+Daily Scrum:
+or Stand Up, is a short daily meeting of the development team to report on how people are getting on and what they are
+planning. Holds each team member to account for their work as well as helping anyone out with any blocks or issues.
+
+Sprint Review:
+Product focused review at the end of the sprint, discussing and demonstrating what was completed, discussing any
+feedback from that sprint, and any updates to the backlog.
+
+Sprint retrospective
+Takes place after a sprint review, with all the scrum team to identify successful and less successful parts of the
+sprint, discuss individual and team relationships as well as tools and processes. Plans should be made for specific
+improvement to these areas before the next sprint, to implement ongoing development.
+
+
+SCRUM ROLES
+
+ScrumMaster -
+The lead role who is accountable for the team and its effectiveness and makes sure the team follows the scrum framework.
+Creates team focus, helps with coaching other members and ensures scrum events take place and run well.
+
+Product Owner -
+Usually a key stakeholder (representing the needs of the other stakeholders), someone from product management or a lead
+user, they are accountable for communicating the products' goal, organising and managing the product backlog, and
+keeping product focus.
+
+Development Team -
+The team responsible for building and implementing new items on the actual product and meeting sprint goals. The team is
+usually comprised of the developers or programmers and can also include other members such as designers or writers.
+
+
+
+-----------------------------------------------------------
+
+QUESTION 2
+
+You are leading a development team that was given a task to create a new yoga booking system.
+
+High level description of the system is as follows:
+
+·        It has a very simple interface to accept user input (bookings) and display classes information
+·        All bookings, appointments, schedules etc. should be stored in a SQL database.
+·        There is a ‘backend’ system that should be written in Python to handle the logic and manage the data flow.
+         Your team has two weeks to build a simple prototype that will be shown to the client to seek their feedback
+         and discuss further enhancements.
+
+TASK
+·        Break this task into smaller stories (chunks of work) for the team to work on.
+·        Assume that one person works on one task.
+·        Mark tasks that can be worked on in parallel and perhaps those that need to be worked on in particular order.
+
+
+
+
+In two weeks, one team member per item:
+
+INTERFACE        - form or set of questions to accept user input (bookings)  => this can be worked on first parallel to
+                 - display of classes information + schedule                    database set up before class information
+                                                                                is set.
+
+DATABASE (SQL)   - table of class schedules - PRIORITY
+                 - table of instructors schedules with no overlaps if class schedule is busy - PRIORITY
+                 - table of user bookings
+                 - table of customer information ( name, id, payment?) - set up and tested but not completed
+
+BACKEND (PYTHON) - data flow - user input to reserve place, the connection to interface
+                 - API to database - PRIORITY, Second only to DATABASE SET UP
+                 - class times / people per class / availability - no over booking or double booking
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+TASK 2  (SQL)
+
+
+QUESTION 1
+Design a cinema booking system.
+Think how you would approach the problem and what are potential ways of solving it?
+You do not need to write actual code, but describe the high-level approach:
+
+
+Draw a list of key requirements (features):
+- Timetable of what films are on when (dates)
+- Information on the films: imax, 3d, regular etc suitable for .. PG/ U /18 and film descriptions and ratings
+- Day / time / price / screen information for each film
+- Cinema location - which films are available at each
+- Number of screens at each location + type of screen if it accepts imax and 3/4d
+- Search: by film name, date, location, genre, screening, age appropriate, accessibility
+- Payment portal - secure details if stored + accept different payment types
+
+Potential extras:
+- Regular tickets / vip or membership cards.
+- Login ability if people are members
+- Accept membership cards
+- Gift card options - purchase amounts rather than pay for specific film
+
+
+What are your main considerations?
+Database: tables for films with descriptions, genres, age appropriate guides; locations and number of screens,
+          start times, number of seats/tickets available, price of tickets.
+
+Interface: needs to display the schedule: films showing, prices, entry requirements (age) by search of either location
+           or film. Then allow booking, so some sort of form, detail saving, and payment portal. Display finished info.
+
+Back end: accept search - query database - display results on times, prices, availability - accept choice - take payment
+          - update database - display booking info
+
+
+What would be your common or biggest problems?
+
+- Successfully querying the database by different parameters
+- Payment acceptance - inc vouchers/ gift cards / discounts
+- Verify ages for age limit films
+- People booking limited spaces at same time - so holding the booking and displaying as full / or not doing until paid.
+- Bandwidth / memory of a website to render for different people accessing web on different devices and networks
+- Amount of users at the same time - very popular releases of new films could cause problems
+
+
+What components or tools would you potentially use?
+
+- SQL Database: All bookings, schedules etc. should be stored in
+- cache, cookies, local storage - something to keep users info for a short period
+- Web based Front end - maybe something in JavaScript as it renders in the browser, and most people would be accessing
+  this way rather than in an app (although that would work otherwise) but Python or another language could handle
+- API to connect front end to back end
+- Python for back end, handling database queries (although this also could be potentially a different language)
+- Payment system - something like Stripe to handle payment details - and therefore API for this
+
+
+
+You are welcome to draw a diagram (a very simple one) for the process flow to explain how  it is going to work.
+
+
+
+
