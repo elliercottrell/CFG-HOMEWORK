@@ -1,0 +1,57 @@
+HOMEWORK WEEK 3
+
+This week’s homework is a research based one. You’ll need to conduct independent learning, in combination with existing material (where available), to answer the questions below. The reason for this homework is to ensure you are aware of critical topics in CS. These topics were difficult to cover within the existing lesson schedules, but due to their importance are placed within the homework instead. Make sure to research, learn and then answer the following:
+
+________________________________________________________________________________________________________________
+
+1. What is OOP? How may you have already made use of it (e.g. class components)?
+
+OOP or Object Oriented Programming is a programming model which is based around the use of objects, or collections of code (functions) and data which can be implemented in simple blocks and reused. Usually methods or processes are attached to these objects that can access and modify them. Both the use of States and Classes effectively do this by storing information that can be implemented accross many different objects in different ways. It is effective in creating DRY code, as it helps create code once that can be easy to modify where needed. Many languages are considered OOP such as Java, Python, Javascript, C++ ad Ruby to name a few. OOP has many aspects but the four pillars - which are based on ‘real life’ concepts are discussed below.
+
+
+2. What is Polymorphism?
+
+Polymorphism means when something can occur in different forms with different characteristics. In OOP (and computer science in general) this refers to objects being able to take on many forms or class references. So for a very basic example, a method can be called that does something different to an object depending on the class of the object. Or potentially do different things on the same object that has instances where it uses different classes, it depends on the data that is stored in the object and which class or method is called on it. Polymorphism in OOP allows developers to perform a single action in many ways to change an objects behaviour, this is a very powerful tool which helps makes code very versatile, easy to read and manipulate and very good for updating or maintaining as code can be changed in a single place and have wide ranging effects on the code base.
+
+
+3. What is Abstraction?
+
+Abstraction is found in all computer programming but it is fundamental to OOP, and is one of the main pillars. The concept behind it (and again mimicked from ‘real life’) is to remove excess or complex irrelevant details in order to focus attention on important details. By removing unwanted information you can essentially leave a set of properties that can be used on a multitude of objects. There are two main types of abstraction. Data abstraction which conceals an objects data, so an object can be used without the user program knowing what actual data it holds: and process abstraction, whereby the user does not need to know all the functions and processes going on inside an object, we just want to be able to use the object to perform a known task. A simple example of how a user can see abstraction at work is a login - we can see the information we are giving and why that is needed, and even a layer under that, the form fields, the button being pushed etc. But the workings behind where data is fetched from a server, and matched through to the correct information is all abstracted away from us.
+
+
+4. What is Inheritance?
+
+Inheritance is when a ‘child’ or ‘sub’ class inherits methods or attributes from another class - a ‘parent’ or ‘super’ class. These attributes are to give more functionality to an object, they can be functions, instance variables or methods that are passed down to build new classes on top of existing ones. A subclass is said to extend a superclass so it takes the existing class attributes it wishes to use, but adds in extra things that the new class may need to do. In this way, there can be multiple children that all share the same parent, and as such all share certain attributes, then the different child classes can add to this in different ways. For a very simple example let’s say there was a Super class ‘Woman’ which contains a variable with a function that displays “I am a woman”. And then there were multiple subclasses all of which wanted to use that particular “function” but then build different things on top of it, they could extend the superclass to fit their needs. So one subclass could be ‘Programmer’ This would extend the Woman class, giving it access to the variable and function stored inside the Woman class, but could add other functions or print statements to it. There could then be a ‘Mother’ class which could also extend Woman, letting it use the same function again, but this one could add completely different functionality to Programmer. Inheritance can be very powerful when it comes to using classes to modify multiple components in multiple ways, but retaining easy modular updating.
+
+
+5. What is encapsulation?
+
+Encapsulation is the process of hiding data or controlling visibility of data, to protect information (as opposed to abstraction which is to hide unwanted or unnecessary data). Data is protected by being encapsulated along with any methods that operate on that data, within a class. These attributes remain hidden within the class and are not accessible by other classes. In different programming languages this can be handled differently. Some allow classes to be declared as private others also do a from of encapsulation just by using Scope to define which objects have access to what. Encapsulation is meant primarily to protect data, so it is hides information to determine who and what has access and also when, this can help to prevent changes of state or other methods happening concurrently or incorrectly at the wrong time and potentially causing race conditions or other unwanted side effects. 
+
+
+6.What is:
+
+a. Agile development?
+
+Agile is a development philosophy which facilitates the use of scrums and other processes to organise and guide teams on best practices. Scrums form the basis of agile organisations’ project management framework, a scrum is based on continuous learning and is structured to create a cycle of learning, development and implementation, and includes planning, stand ups, sprints and retrospectives. Other aspects that make up agile development include defining software development lifecycles,  providing code writing guidelines and implementing devOps to maintain continuous collaboration. The development cycle runs through plan, build, test, deploy, monitor etc in a continuous loop where teams can often be working on different stages at the same time and all can overlap and repeat as many times as is necessary. This can continue if a project is continually growing or being built upon.
+
+
+b. Waterfall development?
+
+Waterfall is a development methodology - sometimes referred to as the Waterfall Model or linear-sequential life cycle model - involves a process that flows from one phase of a project to the next, moving forward when one phase is complete. Typically the outcome of one phase is the starting point for the next, making phases work in sequence. This model ensures that research and planning is done upfront and that time estimates are done for each stage of development to ensure accuracy, and each stage follows these strict guidelines.
+
+
+c. How do they differ? Which is suited for which situation?
+
+Waterfall development is good for projects where the requirements are strict, well documented and unambiguous and where there is a set timeline. If each stage needs to be carefully completed before starting the next, if for example you are working with a large management systems or potentially life saving systems for hospitals, where it is important that each stage is fully working and complete by itself before moving over; you would want to look at a waterfall model as this ensures each aspect is fully tested before anything is deployed or any other areas can proceed.
+
+Agile development is more flexible, and works well for situations where stages can be worked on concurrently, and changes made often. It is a much more collaborative way of working and relies on regular feedback from stakeholders and users. Because Agile development is very user-focused it  often helps produce a better end product that gives more value. This method does have some caveats as it does need someone to manage and prioritise the backlog, or it can run the risk of either having scheduling issues, money misuse or a myriad of other issues. Agile can be a great choice for projects where the exact outcome is not defined, as things can be easily modified as it develops, so it is an appropriate choice for a lot of modern app development.
+
+
+
+
+________________________________________________________________________________________________________________
+
+Once complete, please return to your instructor your answers! Remember:
+Justify and be critical of everything! This distinguishes a great answer from a good answer
+Analyse - why does x even exist? Who needs it or uses it? Who is it important to, what’s the point of it at all?
