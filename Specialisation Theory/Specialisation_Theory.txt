@@ -1,0 +1,118 @@
+THEORY QUESTIONS ASSIGNMENT
+
+Full Stack Stream
+(Maximum Score: 100)
+
+_________________________________________________________________________________
+
+KEY NOTES
+
+This assignment is to be completed at the student's own pace and submitted before the given deadline. 
+
+There are 8 questions in total and each question is marked on a scale 1 to 20. The maximum possible grade for this assignment is 100 points. 
+
+Students are welcome to use any online or written resources to answer these questions. 
+
+The answers need to be explained clearly and illustrated with relevant examples where necessary. Your examples can include code snippets, diagrams or any other evidence-based representation of your answer. 
+
+_______________________________________________________________________________________________________
+
+1. What is React? (E.g. Consider: what is it? What is the benefit of using it? What is its virtual DOM? Why would someone choose it over the standard HTML / CSS stack?) 
+(15 marks)
+
+React is a Javascript library for front-end development. It is used for building UI (user interface) components - it is a library rather than a framework as it consists of functions that can be called and used rather than a whole definition of an applications design. It utilises JSX (an extension to Javascript) which essentially combines Javascript with HTML, to make for often shorter easier to read and write code, this means it handles UI and logic all together. It is built using components and each one of them takes care of it's own appearance and the way it works. These are then combined together in "blocks" to comprise an entire app, this makes any code changes very simple as each component can be addressed in isolation without it having to effect other parts to the application. This is just one of the benefits to using React over vanilla JS (or other programming languages or frameworks). Another benefit is that it is open sourced and has a strong community behind it working to conitinually improve it, it is one of the most popular languages today and that level of interest and care into maintaining and improving the library means it is constantly improving.
+
+A further benefit to React is that can be very responsive and quick loading (especially for large applications) because of factors such as the virtual DOM. 
+
+The virtual DOM is a concept utilised by React where a virtual representation of the the DOM is kept in memory and synced with the real DOM, it helps to optimise an applications performance. React uses it to render elements or objects that represent the interface, it means you tell React what state (think appearance) you want the UI to be in and it makes the DOM match that. 
+
+Many of these benefits could be the reason why someone may chose React in their development stack. A main reason someone may choose to use it would be that it would brings together HTML, CSS and JS all in one place. With the separating of HTML and CSS into component filing rather than as generic files for each 'page' or project as a whole, some may see this as easier to access when needing to update or maintain certain elements rather than as a whole. For very large applications especially, this could be a huge time saver, and therefore money saver. People working on very small projects, may not see these benefits - or potentially those of the virtual DOM - simply because React may over complicate a simple project and there could be not enough of a memory issue to really see any benefit to its virtual DOM. But for any larger projects using React could make huge differences to both the developer, stakeholders and the end user.
+
+
+
+2. What are Props? What is State? What is the difference between them? 
+(10 marks)
+
+Props or "properties" are behavioural functions for components, or pieces of information for them. They can be passed into a componenet in a similar way arguments are passed into functions in JS (and other languages). They allow for different components to be passed these Props (and therefore their values) from one central or parent place, which when altered in this central place would then effect all the components being passed that property. This makes changing multiple areas in one go much easier.  
+
+State is a built in object, it is how components store information about themselves which is fully controlled by that component. It contains the components attributes which can be modified and then the component re-rendered with the updated information. It is how React manages the changes in the data within an application, and how that appears, or 'in what state' a componenet appears.
+
+Although Props and State perform a similar function from the outside, that is the rendering of a component, there is a key difference. State is fully controlled by a component where props are passed to it. Using state the component can update internally rather than require updating from external sources. State can be mutatable because it is local to the componenet, whereas props are read-only so a component can use them but cannot modify them.
+
+
+
+3. What are React Hooks? How do they differ from existing lifecycle methods? 
+(10 marks)
+
+Lifecycle Methods are specific methods used on components during their lifetime in the virtual DOM. For example 'mount' is used when they first exist, they can then 'render', 'update' or 'disappear' until finally they 'unmount' to no longer exist. This is the "life" of a component in React, these plus other methods are performed on a component to control how and when it "lives".
+
+Hooks are a mechanism that allows a developer to access or "hook into" a Lifecycle Method (or State) in a functional component to make use of it. This means that a developer does not really need to use Classes but actually can control functionality for each component inside itself and use Hooks to make the Lifecycle for itself. For using Lifecycle effects as Hooks, React has in-build { useEffect } which can be imported and essentially allows us to use mount, update and unmount combined together inside a components functionality. Once imported Hooks can be used to set the statefollowing this convention: 
+const [stateObject, setStateObject] = useState ("an exaple of text to display in this state"). This successful introduction of Hooks has given functional components the access to Lifecycle and State in a way that has overtaken then need to use Classes in React at all if the developer so chooses.
+
+
+
+4. Design the perfect door - what should it look like, what are the components for it? What design heuristics should it follow, and how does your design match? What made you choose this design? 
+(20 marks). 
+ (a) Consider in particular (likely need to do independent learning):
+    who are your stakeholders? What are their personas? What are the doors requirements and how will your stakeholders benefit from your solution?
+
+Can you actually improve on a Norman door? It follows the concept of affordances and also the principal that the right door is one that can be used by anyone correctly first and every time without the need of any explaination. The only way I can personally see to perhaps add to it, is add a few more details for accessibility / inclusivity and post covid details for a particular placement. Please see attached design. 
+
+For the purposes of this, the stakeholders in mind would be owners of a public space (really could be anywhere with a large amount of workers/visitors) and in this case I have chosen to demonstrate with a toilet block. This gives requirements of being used frequently, potentially by busy/hurrying people by people of all abilities, with as minimal contact as possible. 
+
+The door is designed for the entry from the public space into a toilet area. - although again, could work into an office for example, equally as well - The door would have a push plate, the lack of a handle denotes what a user should do immediately, without the need for "push"(affordance), and the longer line of the plate would allow it to be at the right height/easy to push for as many people as possible. On top of this, someone with limited sight would be able to touch at arms length and be able to feel push plate.  A push is easier for someone of limited ability, and also allows for 'hands free' if someone is entering and does not wish to or is not able to touch the door. Ideally it would have a mechanical hinge to allow for controlled closing, and not a huge open swing, but to allow for users to be able to be somewhat controlled, a glass or see-through pannel would help to be aware of what would be on the other side.
+
+The reverse side of the door would ideally be identical. A two way door eliminates the need for a pull, so no handle (again push plate to denote push). This becomes especially relevant on exit from a toilet block, as when people have just washed their hands they are able to exit without the need to touch the door. 
+
+
+
+
+5. What is Angular, and how does it differ from React? You may need to conduct independent research and learning for this 
+(10 marks)
+
+Angular is a Javascript development platform built on Typescript. It is open-sourced and lead by Google. It is a further designed rewrite of the original Angular JS. It is a component based framework and consists of integrated libraries and developer tools. It was designed to make applications scalable and to make updating and new developments as easy as possible. It is used to build single-page applications and uses HTML as a template and Typescript which is imported into applications in a set of libraries. Angular components are organised into modules which collect related code into sets, these sets define an application, which must have one module and can have many. Angular utilises the Jasmine Testing Framework, which provides functionality for multiple kinds of tests.  
+
+The main difference between React and Angular is that React is a Javascript library (a collection of code that can be imported and reused to perform functions) where Angular is a framework (a collection of libraries) Along with this there are a couple of notible differences to a developer. Angular uses the regular DOM rather than a virtual as React does. This means whenever an update is made, the entire structure will be updated not just the ones that were necessary. (Please see Q1 for the React Virtual DOM). This and the bundle size make React faster than Angular. Typescript can be used to define a set of types(or rules) to Javascript, Angular uses typescript which makes for code which is easier to understand and to maintain. It can be installed into React if someone wanted to inforce the same, but it is less of a prerequisit than with Angular. Lastly, Angular employs two-way data binding (to Reacts one-way) which means that updates to and retrivals from data stores happen immediately, meaning both the UI and the data model refect changes in the other symultaniously. This means some of the complex logic is not stored in the front end and applications which rely on large amounts of data appear to be handled much quicker. 
+
+
+
+6. Please describe Redux in as much detail - especially consider: why would someone use it? What is it? What's the benefit of using it? Are there any potential drawbacks to using it? How can it be added to a project? What is dispatch, provider, actions, etc? 
+(15 marks)
+
+Redux is a 'State container' or a container that helps to store and manage a javascript appications State. It was designed to create consistency and continuity accross all enviroments, to make testing easy, and is mostly used on large applications, where the need to manage state appropriately is very important. (Compared to smaller ones, where this can be more straight forward). It is useful to help manage the state of an application through the use of a global store that allows access for an entire application so state is managed centrally, creating this consistency. This also means that any and all updates happen in one place, making for easy changing in one place to effect an entire application, this can be very useful for applications at scale.
+
+In React the entire app is nested into a "provider" componenet, this allows all the React components within it to access data from the Redux Store - a globally accessible bank and dispatch actions to the store to update the data. React components use Redux Hooks, most commonly: useSelector - allowing components to access the store to read the data and gain any updates, and useDispatch - to send an Action, which is essentially a change of information, or a modification to a part of the data held in the store. These Actions (by convention) are objects made up of a type and a payload, and they are essentially managed by Reducers. Reducers recieve an Action and they determine how the store should be modified based on what the Action contains. They are responsible for entirely changing the State in the store not adding on to it, so how they manage the Action is important.
+
+Redux can be added to a React project quite simply using an NPM install, then once a store is set up and its Reducers, it can be ready for components to access. Redux can be essential to managing state across large code bases, but it can be unnecessary and a little over complicated to add it to small applications which can manage State quite easily without it. 
+
+
+7. Please describe Linux in as much detail as possible (feel free to use notes made during lessons, or draw from the lesson directly!). Especially consider: what is its history? Why would someone use it over other existing operating systems? How does Windows and Mac OSX differ to Linux? How does Linux function, what are some unique features to it? How can it be installed today? 
+(10 marks)
+
+Linux was essentially created in reaction to and to be a replacement for UNIX, an operating system that allows for easy use of computers, and included commands, file hiarachies and OS kernel etc. 
+
+When Linus Torvalds created complementary components and succeeded in creating a new OS's kernels where The Free Software Foundation and the GNU Project could not, it became the main kernal in GNU and the two essentially became one thing. He named the new system after himself (and UNIX that it was based on) and Linux was created and freely shared. 
+
+Linux is one of the most popular operating systems, it is the predominent choice for servers, and there are multiple alternate versions including Ubuntu. Android on smartphones is Linux based and currently (2022) has the largest installed base of general purpose operating systems and Chromebook uses the Linux kernel based Chrome OS. Smart TV's and video game consoles such as Samsung, automobiles such as Tesla and Mercedes, and the Mars Rovers all rely in some way if not run entirely on Linux. 
+
+Some of the main features of Linux include it's portability, it can be compatibly used on many different hardware platforms across almost any device. It is also open-sourced, so it's code is accessible and mutatable for any developer to continually work on. The Shell allows users to issue commands to the system directly to effect the application, it is available in multiple languages, for users worldwide and it supports nearly every programming language. It can be installed using a download and an external drive, and can be run on a Windows PC or Mac with a bit of set up.
+
+Linux differs to Windows and Mac OS in a few ways. It can run on almost any hardware unlike the other two (especially Mac) even old devices, and it is free to licence and very flexible to use. Both Windows and Mac require payment for their private source code to run their systems. MacOS is also based on Unix and is very similar to Linux and the terminal or Shell works in much the same way.
+
+In my opinion the main and quite overwhelming reason someone may chose to run Linux is its accessibility. Being free and flexible to use means that it can be used by anyone without an econimic boundary. The fact that it is in reality hugely similar to any of the operating systems available but does not come with a price tag that rules out use by a large poplulation seems to be a huge benefit to the developer community.
+
+
+
+8. What are they, and which is better between Class components and Functional components? Provide a discussion. Consider: Go deep - how does each one work? What is the unique properties or behaviours to each one? Why would someone use one over the other? What are the advantages and disadvantages of each one? Who benefits from these advantages and disadvantages, who is it suitable for? 
+(10 marks)
+
+
+In React, Class Componenets are reusible chunks of code made up of functions that can be applied to add functionality accross an application. They use the 'extends React' statement, to give the component access to React's functions; and utilise the 'render()' method. Class components allow a developer to access and originally were the only way to track a componenets Lifecycle and State and to perform actions based on them. They are known as 'stateful' or 'intelligent' functions because they manage State and other logic.
+
+Now React has developed and there are ways to use State with Functional Componenets, which has become the standard choice accross React development. 
+
+Functional Componenets are essentially plain Javascript functions that accept properties and use 'return' to return an element. By their nature they are fairly simplistic and concise, they can be very beneficial when aiming for DRY code, as they can be resued very easily, with ease of mutability through the props they are passed. They follow OOP best practices due to the reusability and small break down of each function into a singular component. 
+
+Classes use render() to extend componenets and can use methods such as componentWillMount to control a components Lifecycle and State. It used to be that Functional Components could not "hook into" the Lifecycle in this way, and so Class Componenets were important and widely used in React development to serve this purpose. However now, the existence of "Hooks" has changed that. Functional Componenets use Hooks (as described previously) to allow them access to these Lifecycle methods and to State, this has made them and their clean, simple to read, easy to test nature the new favourite. Although Class Components are still used, especially if it is a large component containing many functions, that for some reason should not be broken down - it is now best practice to use Functional Components. 
+
+Class Components can be quite bulky and complex vs the simplicity of functional Components, this makes for a clear positive for Functional Componenets over Class. Because of this Functional Components often prove to be "faster" than Class Components, another plus there. It is quite hard to find any arguments for using Class over Functional, especially as React keeps evolving it will more than likely get to the point where Class Componenets are phased out entirely; but for now they make up important parts of existing code bases that until Hooks and other techniques also evolve in Functional Components, classes will remain being utilised.
